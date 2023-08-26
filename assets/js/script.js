@@ -1,4 +1,19 @@
 //Search cái khách hàng yêu cầu và thay đổi ở mục menubar để khách hàng chọn khỏe hơn.
+// function onSearch() {
+//     var input = document.querySelector('.search_input');
+//     var searchText = input.value.toLowerCase();
+    
+//     var items = document.querySelectorAll('#nav li a');
+
+//     items.forEach(function(item) {
+//         var itemName = item.textContent.toLowerCase();
+//         if (itemName.includes(searchText)) {
+//             item.style.display = 'block';
+//         } else {
+//             item.style.display = 'none';
+//         }
+//     });
+// }
 function onSearch() {
     var input = document.querySelector('.search_input');
     var searchText = input.value.toLowerCase();
@@ -8,74 +23,14 @@ function onSearch() {
     items.forEach(function(item) {
         var itemName = item.textContent.toLowerCase();
         if (itemName.includes(searchText)) {
-            item.style.display = 'block';
+            item.style.visibility = 'visible';
         } else {
-            item.style.display = 'none';
+            item.style.visibility = 'hidden';
         }
     });
 }
 // Em sẽ sử dụng JavaScript để khi khách hàng nhấn mua ngay thì giỏ hàng sẽ xuất hiện và tăng giá trị sản phẩm lên
 // Sau đó, khi ấn lại vào giỏ hàng, thì sẽ xuất hiện form giỏ hàng và khách hàng điền thông tin để thanh toán và cửa hàng sẽ tiếp nhận thông tin và gửi hàng.
-// var cartItems = [];
-
-// function addToCart(productName, price) {
-//     cartItems.push({name: productName, price: price });
-//     updateCartIcon();
-//     updateCartForm();
-// }
-
-// function updateCartIcon() {
-//     var cartCountElement = document.getElementById('cartCount');
-//     cartCountElement.textContent = cartItems.length;
-//     cartCountElement.style.display = 'inline';
-// }
-
-// function calculateTotalPrice() {
-//     var totalPrice = 0;
-//     cartItems.forEach(function(item) {
-//         totalPrice += parseFloat(item.price);
-//     });
-//     return totalPrice; 
-// }
-
-// function updateCartForm() {
-//     var cartItemsList = document.getElementById('cartItems');
-//     cartItemsList.innerHTML = '';
-
-//     cartItems.forEach(function(item) {
-//         var listItem = document.createElement('li');
-//         listItem.textContent = item.name + ' - ' + item.price + ' đ';
-//         cartItemsList.appendChild(listItem);
-//     });
-
-//     var totalPriceElement = document.getElementById('totalPrice');
-//     totalPriceElement.textContent = 'Tổng giá: ' + calculateTotalPrice() + ' đ'; 
-// }
-
-// function showCart() {
-//     var cartForm = document.getElementById('cartForm');
-//     if (cartForm.style.display === 'none') {
-//         cartForm.style.display = 'block';
-//     } else {
-//         cartForm.style.display = 'none';
-//     }
-// }
-
-
-
-// function placeOrder() {
-//     var name = document.getElementById('name').value;
-//     var phoneNumber = document.getElementById('phoneNumber').value;
-//     var address = document.getElementById('address').value;
-//     var totalPrice = calculateTotalPrice();
-
-//     alert('Cảm ơn ' + name + ' đã mua hàng!\nTổng số tiền: ' + totalPrice.toLocaleString('vi-VN') + ' đ');
-//     cartItems = [];
-//     updateCartIcon();
-//     updateCartForm();
-// }
-
-//Hiển thị lại icon giỏ hàng
 var cartItems = [];
 
 function addToCart(productName, price) {

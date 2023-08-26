@@ -89,8 +89,7 @@
     padding: 10px;
 }
 
-.left-header .gap-right h2:hover {
-    color: #1B2223;
+.left-header .gap-right h2:hover, .left-header .gap-right p:hover {
     text-shadow: 0 0 5px #0EF6CC,
     0 0 25px  #0EF6CC,
     0 0 50px  #0EF6CC,
@@ -194,8 +193,6 @@
 .menubar {
     background-color: #1B2223;
     height: 50px;
-    /* width: 100%;
-    position: fixed; */
     z-index: 1;
 }
 
@@ -208,14 +205,6 @@
 .menubar #nav, .subnav {
     list-style-type: none;
 }
-
-.menubar ul:hover li {
-    filter: blur(1px);
-}
-
-.menubar ul li:hover {
-    filter: blur(0px);
-} 
 
 .menubar #nav > li {
     display: inline-block;
@@ -394,6 +383,10 @@
     margin-bottom: 76px;
     font-size: 32px;
     color: #1B2223;
+    text-shadow: 0 0 100px #1B2223,
+    0 0 50px  #1B2223,
+    0 0 25px  #1B2223,
+    0 0 0px #1B2223;
 }
 
 .soccer-accessories-products h3{
@@ -614,9 +607,8 @@
 
 .cart-icon {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    right: 0;
+    top: 90%;
     background-color: #0EF6CC;
     padding: 10px;
     border-radius: 50%;
