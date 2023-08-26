@@ -271,9 +271,6 @@
 
 .banner {
     width: 100%;
-    background-image: url('/assets/img/banner/banner.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
     height: 600px;
     padding: 0 50px;
     display: flex;
