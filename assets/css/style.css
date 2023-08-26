@@ -271,6 +271,9 @@
 
 .banner {
     width: 100%;
+    background-image: url('https://thanhtu0.github.io/LuuLeThanhTu_Project__FE/assets/img/banner/banner.jpg?fbclid=IwAR21dZiA4SRXdUCCL91e6cH9yLdT5tuu6GhK6FxT9hcqBG14225Aa6Zen38');
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 600px;
     padding: 0 50px;
     display: flex;
