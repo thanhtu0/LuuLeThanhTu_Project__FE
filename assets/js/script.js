@@ -1,19 +1,4 @@
 //Search cái khách hàng yêu cầu và thay đổi ở mục menubar để khách hàng chọn khỏe hơn.
-// function onSearch() {
-//     var input = document.querySelector('.search_input');
-//     var searchText = input.value.toLowerCase();
-    
-//     var items = document.querySelectorAll('#nav li a');
-
-//     items.forEach(function(item) {
-//         var itemName = item.textContent.toLowerCase();
-//         if (itemName.includes(searchText)) {
-//             item.style.display = 'block';
-//         } else {
-//             item.style.display = 'none';
-//         }
-//     });
-// }
 function onSearch() {
     var input = document.querySelector('.search_input');
     var searchText = input.value.toLowerCase();
@@ -80,8 +65,8 @@ function hideCart() {
     var cartForm = document.getElementById('cartForm');
     cartForm.style.display = 'none';
 
-    var cartIcon = document.querySelector('.cart-icon');
-    cartIcon.style.display = 'block';
+    // var cartIcon = document.querySelector('.cart-icon');
+    // cartIcon.style.display = 'block';
 }
 
 function placeOrder() {
