@@ -1,16 +1,15 @@
 //Search cái khách hàng yêu cầu và thay đổi ở mục menubar để khách hàng chọn khỏe hơn.
 function onSearch() {
     var input = document.querySelector('.search_input');
-    var searchText = input.value.toLowerCase();
-    
-    var items = document.querySelectorAll('#nav li a');
+    var filter = input.value.toLowerCase();
+    var menuItems = document.querySelectorAll('#nav > li');
 
-    items.forEach(function(item) {
-        var itemName = item.textContent.toLowerCase();
-        if (itemName.includes(searchText)) {
-            item.style.visibility = 'visible';
+    menuItems.forEach(function(item) {
+        var menuItemText = item.textContent.toLowerCase();
+        if (menuItemText.includes(filter)) {
+            item.style.display = 'block';
         } else {
-            item.style.visibility = 'hidden';
+            item.style.display = 'none';
         }
     });
 }
@@ -22,6 +21,16 @@ function addToCart(productName, price) {
     cartItems.push({ name: productName, price: price });
     updateCartIcon();
     updateCartForm();
+
+    var cartIcon = document.querySelector('.cart-icon');
+    var cartCountElement = document.getElementById('cartCount');
+    cartIcon.classList.add('bounce-animation');
+    cartCountElement.classList.add('bounce-animation');
+
+    setTimeout(function() {
+        cartIcon.classList.remove('bounce-animation');
+        cartCountElement.classList.remove('bounce-animation');
+    }, 500);
 }
 
 function updateCartIcon() {
