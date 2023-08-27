@@ -65,10 +65,10 @@
 
 .left-header .gap-left .font-icons:hover {
     color: #3A4F50;
-    text-shadow: 0 0 5px #F4FEFD,
-    0 0 25px  #F4FEFD,
-    0 0 50px  #F4FEFD,
-    0 0 100px #F4FEFD;
+    text-shadow: 0 0 5px #0EF6CC,
+    0 0 25px  #0EF6CC,
+    0 0 50px  #0EF6CC,
+    0 0 100px #0EF6CC;
 }
 
 .left-header .gap-left img{
@@ -119,7 +119,7 @@
     background-color: #1B2223;
     border-radius: 30px;
     padding: 10px;
-    }
+}
 
 .center-header .search_input{
     color: #F4FEFD;
@@ -130,19 +130,19 @@
     caret-color:transparent;
     line-height: 40px;
     transition: width 0.4s linear;
-    }
+}
 
 .center-header .searchbar:hover > .search_input{
     padding: 0 10px;
     width: 450px;
     caret-color: #F4FEFD;
     transition: width 0.4s linear;
-    }
+}
 
 .center-header .searchbar:hover > .search_icon{
     background: #F4FEFD;
     color: #0EF6CC;
-    }
+}
 
 .center-header .search_icon{
     height: 40px;
@@ -154,7 +154,7 @@
     border-radius: 50%;
     color:#0EF6CC;
     text-decoration:none;
-    }
+}
 
 .right-header {
     height: 100px;
@@ -162,6 +162,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .right-header p {
@@ -172,6 +173,13 @@
 
 .right-header i {
     margin-right: 20px;
+}
+
+.right-header p:hover, .right-header i:hover {
+    text-shadow: 0 0 5px #0EF6CC,
+    0 0 25px  #0EF6CC,
+    0 0 50px  #0EF6CC,
+    0 0 100px #0EF6CC;
 }
 
 .icon-shake:hover {
@@ -392,6 +400,13 @@
     0 0 0px #1B2223;
 }
 
+.club-products h2:hover {
+    text-shadow: 0 0 100px #0EF6CC,
+    0 0 50px  #0EF6CC,
+    0 0 25px  #0EF6CC,
+    0 0 0px #0EF6CC;
+}
+
 .club-products .list-products {
     display: flex;
     list-style: none;
@@ -448,74 +463,6 @@
 
 .club-products .list-products .item .btn-buy:hover {
     background-color: #3A4F50;
-}
-
-.information {
-    padding: 50px 134px;
-}
-
-.content-section {
-    padding: 40px;
-    background-color: #F4FEFD;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.section-heading {
-    font-size: 34px;
-    text-align: center;
-    margin-bottom: 5px;
-}
-
-.section-sub-heading {
-    font-size: 16px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
-}
-
-.col {
-    flex: 1;
-    padding: 0 15px;
-}
-
-.col-half {
-    width: 50%;
-}
-
-.form-control {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #F4FEFD;
-    border-radius: 3px;
-    font-size: 14px;
-}
-
-.form-submit-btn {
-    background-color: #0EF6CC;
-    float: left;
-    color: #F4FEFD;
-    font-weight: 700;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 3px;
-    font-size: 16px;
-}
-
-.form-submit-btn:hover {
-    background-color: #3A4F50;
-}
-
-.contact-form h3 {
-    font-size: 40px;
-    margin-bottom: 10px;
 }
 
 .footer {
@@ -615,7 +562,6 @@
     height: 60px;
     font-size: 18px;
     color: #F4FEFD;
-    
 }
 
 .cart-count {
@@ -735,3 +681,12 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
+
+
+
+
+
+
+
+
+

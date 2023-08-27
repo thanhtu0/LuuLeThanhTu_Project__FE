@@ -15,7 +15,7 @@ function onSearch() {
     });
 }
 // Em sẽ sử dụng JavaScript để khi khách hàng nhấn mua ngay thì giỏ hàng sẽ xuất hiện và tăng giá trị sản phẩm lên
-// Sau đó, khi ấn lại vào giỏ hàng, thì sẽ xuất hiện form giỏ hàng và khách hàng điền thông tin để thanh toán và cửa hàng sẽ tiếp nhận thông tin và gửi hàng.
+// Sau đó, khi ấn lại vào giỏ hàng, thì sẽ xuất hiện form giỏ hàng và khách hàng điền thông tin để thanh toán.
 var cartItems = [];
 
 function addToCart(productName, price) {
