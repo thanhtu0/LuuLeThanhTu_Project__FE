@@ -1,15 +1,24 @@
+// hide loading
+setTimeout(function () {
+    console.log('ok');
+    document.getElementById("loading").style.display = "none";
+    console.log('ok');
+}, 1000)
+
 //Search cái khách hàng yêu cầu và thay đổi ở mục menubar để khách hàng chọn khỏe hơn.
+
 function onSearch() {
     var input = document.querySelector('.search_input');
-    var filter = input.value.toLowerCase();
-    var menuItems = document.querySelectorAll('#nav > li');
+    var searchText = input.value.toLowerCase();
 
-    menuItems.forEach(function(item) {
-        var menuItemText = item.textContent.toLowerCase();
-        if (menuItemText.includes(filter)) {
-            item.style.display = 'block';
+    var items = document.querySelectorAll('#nav li a');
+
+    items.forEach(function (item) {
+        var itemName = item.textContent.toLowerCase();
+        if (itemName.includes(searchText)) {
+            item.style.visibility = 'visible';
         } else {
-            item.style.display = 'none';
+            item.style.visibility = 'hidden';
         }
     });
 }
@@ -21,16 +30,6 @@ function addToCart(productName, price) {
     cartItems.push({ name: productName, price: price });
     updateCartIcon();
     updateCartForm();
-
-    var cartIcon = document.querySelector('.cart-icon');
-    var cartCountElement = document.getElementById('cartCount');
-    cartIcon.classList.add('bounce-animation');
-    cartCountElement.classList.add('bounce-animation');
-
-    setTimeout(function() {
-        cartIcon.classList.remove('bounce-animation');
-        cartCountElement.classList.remove('bounce-animation');
-    }, 500);
 }
 
 function updateCartIcon() {
@@ -41,7 +40,7 @@ function updateCartIcon() {
 
 function calculateTotalPrice() {
     var totalPrice = 0;
-    cartItems.forEach(function(item) {
+    cartItems.forEach(function (item) {
         totalPrice += parseFloat(item.price);
     });
     return totalPrice;
@@ -51,7 +50,7 @@ function updateCartForm() {
     var cartItemsList = document.getElementById('cartItems');
     cartItemsList.innerHTML = '';
 
-    cartItems.forEach(function(item) {
+    cartItems.forEach(function (item) {
         var listItem = document.createElement('li');
         listItem.textContent = item.name + ' - ' + item.price + ' đ';
         cartItemsList.appendChild(listItem);
@@ -91,8 +90,8 @@ function placeOrder() {
 }
 
 //Xác nhận thông tin trước khi gửi form 
-document.querySelectorAll('form').forEach(function(form) {
-    form.addEventListener('submit', function(event) {
+document.querySelectorAll('form').forEach(function (form) {
+    form.addEventListener('submit', function (event) {
         event.preventDefault(); // Ngăn form gửi đi một cách tự động
 
         var confirmed = confirm('Bạn có chắc chắn muốn gửi yêu cầu này?');

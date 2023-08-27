@@ -1,237 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-6.4.0-web/css/all.min.css">
-    <link rel="stylesheet" href="./assets/css/gloves.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/loading.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/header/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Thanh Tú Store</title>
 </head>
+
 <body>
     <div id="container">
-        <div class="header">
-            <div class="left-header">
-                <div class="gap-left">
-                    <a href="" class="font-icons">
-                        <img src="./assets/img/header/logo.png" alt="Ảnh lỗi">
-                        <p class="text-color">𝓕𝓸𝓸𝓽𝓫𝓪𝓵𝓵</p>
-                    </a>
-                </div>
-                <div class="gap-right">
-                    <h2>Thanh Tú Store</h2>
-                    <p>Play like a champion</p>
-                </div>
-            </div>
-            <div class="center-header">
-                    <div class="justify-content-center">
-                      <div class="searchbar">
-                        <input class="search_input" type="text" name="" placeholder="Search..." onkeyup="onSearch()">
-                        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
-                      </div>
-                    </div>
-            </div>
-            <div class="right-header">
-                <p><i class="far fa-clock"></i>7:00 - 17:00</p>
-                <p><i class="fas fa-phone-volume icon-shake"></i>093-254-7683</p>
-            </div>
-        </div>
-
-        <div class="menubar">
-            <ul id="nav">
-                <li><a href="./index.html">Trang chủ</a></li>
-                <li>
-                    <a href="#">
-                        Áo bóng đá<span class="icon-menubar"><i class="fas fa-sort-down"></i></span>
-                        <ul class="subnav">
-                            <li><a href="./countryfootball.html">Áo Đội Tuyển</a></li>
-                            <li><a href="./clubfootbal.html">Áo Câu Lạc Bộ</a></li>   
-                        </ul>
-                    </a>
-                </li>
-                <li><a href="./basketball.html">Áo bóng rổ</a></li>
-                <li>
-                    <a href="#">
-                        Phụ kiện bóng đá<span class="icon-menubar"><i class="fas fa-sort-down"></i></span>
-                            <ul class="subnav">
-                                <li><a href="./ball.html">Bóng</a></li>
-                                <li><a href="./gloves.html">Găng Tay Thủ Môn</a></li>
-                            </ul>
-                    </a>
-                </li>
-                <li><a href="./printordesign.html">Dịch vụ In ấn và thiết kế.</a></li>
-                <li><a href="#footer">Liên hệ</a>
-                </li>
-            </ul>
-        </div>
-
-        <div class="banner">
-            <div class="box-left">
-                <h2>
-                    <span>ÁO BÓNG ĐÁ CLB, ĐỘI TUYỂN, BÓNG RỔ</span>
-                    <br>
-                    <span> BÓNG CHUYỀN</span>
-                </h2>
-                <p>Chuyên cung cấp các áo quần, phụ kiện thể đảm bảo chất lượng,
-                   <br>.Thiết kế và sản xuất theo yêu cầu. 
-                </p>
-                <button>Mua ngay</button>
-            </div>
-            <div class="box-right">
-                <img src="./assets/img/banner/clb_football.jpg" alt="" width="450px" height="200px">
-                <img src="./assets/img/banner/my_team_football.jpg" alt="" width="450px" height="200px">
-                <img src="./assets/img/banner/countryfootball.jpg" alt="" width="450px" height="200px">
-            </div>
-        </div>
-
-        <div class="brands">
-            <div class="brands-img">
-                <img src="./assets/img/brands/1.jpg" alt="">
-                <p>Giá cả hợp lý</p>
-            </div>
-            <div class="brands-img">
-                <img src="./assets/img/brands/2.png" alt="">
-                <p>Ưu đãi giảm giá</p>
-            </div>
-            <div class="brands-img">
-                <img src="./assets/img/brands/3.jpg" alt="">
-                <p>Miễn phí in ấn</p>
-            </div>
-            <div class="brands-img">
-                <img src="./assets/img/brands/4.jpg" alt="">
-                <p>Miễn phí thiết kế</p>
-            </div>
-            <div class="brands-img">
-                <img src="./assets/img/brands/5.png" alt="">
-                <p>Miễn phí ship</p>
-            </div>
-            <div class="brands-img">
-                <img src="./assets/img/brands/6.jpg" alt="">
-                <p>Quà Tặng Rực Rỡ</p>
-            </div>
-        </div>
-
-        <div class="soccer-accessories-products">
-            <h2>Găng Tay Thủ Môn</h2>
-            <ul class="list-products">
-                <div class="item">
-                    <img src="./assets/img/products/soccer accessories/glove/1.png" alt="">
-                    <div class="name">Găng Nike Match Màu cam Đen</div>
-                    <div class="price"><del>300.000</del>250.000</div>
-                    <button onclick="addToCart('Găng Nike Match Màu Cam Đen', 2500000)"class="btn-buy">Mua ngay</button>
-                </div>
-
-                <div class="item">
-                    <img src="./assets/img/products/soccer accessories/glove/2.png" alt="">
-                    <div class="name">Găng Nike Match Màu Xanh Chuối</div>
-                    <div class="price"><del>300.000</del>250.000</div>
-                    <button onclick="addToCart('Găng Nike Match Màu Xanh Chuối', 2500000)"class="btn-buy">Mua ngay</button>
-                </div>
-
-                <div class="item">
-                    <img src="./assets/img/products/soccer accessories/glove/3.png" alt="">
-                    <div class="name">Găng Adidas Predator Màu Trắng Đen</div>
-                    <div class="price"><del>300.000</del>250.000</div>
-                    <button onclick="addToCart('Găng Adidas Predator Màu Trắng Đen', 2500000)" class="btn-buy">Mua ngay</button>
-                </div>
-
-                <div class="item">
-                    <img src="./assets/img/products/soccer accessories/glove/4.png" alt="">
-                    <div class="name">Găng Nike Match Màu Trắng Hồng</div>
-                    <div class="price"><del>300.000</del>250.000</div>
-                    <button onclick="addToCart('Găng Nike Match Màu Trắng Hồng', 2500000)" class="btn-buy">Mua ngay</button>
-                </div>
-
-                <div class="item">
-                    <img src="./assets/img/products/soccer accessories/glove/6.png" alt="">
-                    <div class="name">Găng Nike Vapor Grip Màu Trắng</div>
-                    <div class="price"><del>1.300.000</del>950.000</div>
-                    <button onclick="addToCart('>Găng Nike Vapor Grip Màu Trắng', 9500000)" class="btn-buy">Mua ngay</button>
-                </div>
-
-                <div class="item">
-                    <img src="./assets/img/products/soccer accessories/glove/7.png" alt="">
-                    <div class="name">Găng Nike Vapor Grip Màu Trắng Đen</div>
-                    <div class="price"><del>1.300.000</del>950.000</div>
-                    <button onclick="addToCart('Găng Nike Vapor Grip Màu Trắng Đen', 9500000)" class="btn-buy">Mua ngay</button>
-                </div>
-
-                <div class="item">
-                    <img src="./assets/img/products/soccer accessories/glove/8.png" alt="">
-                    <div class="name">Găng Nike Bioalign Màu Xám</div>
-                    <div class="price"><del>1.7500.000</del>1.450.000</div>
-                    <button onclick="addToCart('Găng Nike Bioalign Màu Xám', 1450000)" class="btn-buy">Mua ngay</button>
-                </div>
-
-                <div class="item">
-                    <img src="./assets/img/products/soccer accessories/glove/9.png" alt="">
-                    <div class="name">Găng Reusch Ergonomic Xanh Chuối</div>
-                    <div class="price"><del>1.7500.000</del>1.450.000</div>
-                    <button onclick="addToCart('Găng Reusch Ergonomic Xanh Chuối', 1450000)" class="btn-buy">Mua ngay</button>
-                </div>
-            </ul>
-        </div>
-
-        <div id="footer" class="footer">
-            <div class="footer-box">
-                <h3 class="information-name">Thanh Tú Store - <span>Luôn đem lại cảm giác tuyệt vời nhất cho bạn.</span></h3>
-                <p class="information-text">Hotline: 093.254.7683</p>
-                <p class="information-text"><b>Shop 1</b>: 304 Bạch Đằng, thành phố Huế</p>
-                <p class="information-text"><b>Shop 2</b>: Đang xây dựng, các bạn chờ đợi trong tương lai nhá.</p>
-            </div>
-            <div class="footer-box">
-                <h3>Giới thiệu về cửa hàng.</h3>
-                <ul class="quick-menu">
-                    <div class="item">
-                        <p>Thương hiệu mang đậm chất bóng đá, phục vụ niềm đam mê bóng đá với những mẫu áo mới và đẹp nhất.</p>
-                    </div>
-                    <div class="item">
-                        <p>Ngoài ra, còn nhận và thiết kế mẫu áo theo yêu cầu từ khách hàng.</p>
-                    </div>
-                    <div class="item">
-                        <p>Hàng được may trực tiếp tại cơ sở sản xuất nên sẽ được kiểm tra kỹ trước khi bán.</p>
-                    </div>
-                    <div class="item">
-                        <p>Luôn đáp ứng đúng 4 tiêu chí: Nhanh - Đẹp - Bền - Ngầu</p>
-                    </div>
-                </ul>
-            </div>
-            <div class="footer-box">
-                <h3>LIÊN HỆ VỚI SHOP BẰNG</h3>
-                <div class="information-icons">
-                    <a href="#"><span class="icon1"><i class="fa-brands fa-facebook-f"></i></span></a>
-                    <a href="#"><span class="icon3"><i class="fa-brands fa-instagram"></i></span></a>
-                    <a href="#"><span class="icon4"><i class="fa-brands fa-youtube"></i></span></a>
-                    <a href="#"><span class="icon2"><i class="fa-brands fa-twitter"></i></span></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="cart-icon" onclick="showCart()">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count" id="cartCount" style="display: none;">0</span>
-        </div>
-    
-        <div id="cartForm">
-            <button class="close-btn" onclick="hideCart()"><i class="fas fa-times"></i></button>
-            <h2>Giỏ hàng</h2>
-            <ul id="cartItems"></ul>
-            <p id="totalPrice">Tổng giá: 0 đ</p>
-    
-            <h3>Thông tin người mua</h3>
-            <label for="name">Tên:</label>
-            <input type="text" id="name"><br>
-    
-            <label for="phoneNumber">Số điện thoại:</label>
-            <input type="tel" id="phoneNumber"><br>
-    
-            <label for="address">Địa chỉ:</label>
-            <textarea id="address"></textarea><br>
-    
-            <button onclick="placeOrder()">Thanh toán</button>
-            <button onclick="hideCart()" style="background-color: #1B2223;">Tiếp tục mua hàng</button>
-        </div>
+        <div id="loading" class="loading">Loading&#8230;</div>
+        <section id="header"></section>
+        <section id="web-nav-bar" class="d-none d-lg-block"></section>
+        <section id="mobile-nav-bar" class="d-bloc d-lg-none"></section>
+        <section id="banner"></section>
+        <section id="brands"></section>
+        <section id="glove-products"></section>
+        <section id="footer"></section>
+        <section id="floating-cart"></section>
     </div>
     <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script>
+        fetch('./components/header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+        fetch('./components/footer.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('footer').innerHTML = data);
+        fetch('./components/floating-cart.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('floating-cart').innerHTML = data);
+        fetch('./components/banner.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('banner').innerHTML = data);
+        fetch('./components/brands.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('brands').innerHTML = data);
+        fetch('./components/nav-bar/web-nav-bar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('web-nav-bar').innerHTML = data);
+        fetch('./components/nav-bar/mobile-nav-bar.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('mobile-nav-bar').innerHTML = data);
+        fetch('./components/products/glove-products.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('glove-products').innerHTML = data);
+    </script>
 </body>
+
 </html>

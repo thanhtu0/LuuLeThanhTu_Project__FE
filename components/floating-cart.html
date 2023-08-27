@@ -1,0 +1,35 @@
+<body>
+    <div class="cart-icon" onclick="showCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount" style="display: none;">0</span>
+    </div>
+
+    <div id="cartForm">
+        <button class="close-btn" onclick="hideCart()"><i class="fas fa-times"></i></button>
+        <h2>Giỏ hàng</h2>
+        <ul id="cartItems"></ul>
+        <p id="totalPrice">Tổng giá: 0 đ</p>
+
+        <h3>Thông tin người mua</h3>
+        <label for="name">Tên:</label>
+        <input type="text" id="name"><br>
+
+        <label for="phoneNumber">Số điện thoại:</label>
+        <input type="tel" id="phoneNumber"><br>
+
+        <label for="address">Địa chỉ:</label>
+        <textarea id="address"></textarea><br>
+
+        <button onclick="placeOrder()">Thanh toán</button>
+        <button onclick="hideCart()" style="background-color: #1B2223;">Tiếp tục mua hàng</button>
+    </div>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>Yêu cầu của bạn đã được gửi thành công!</h3>
+            <p>Cảm ơn bạn đã tin tưởng và ghé thăm shop của chúng tôi.</p>
+        </div>
+    </div>
+    <div id="overlay" class="overlay" onclick="closeModal()"></div>
+</body>
