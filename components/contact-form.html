@@ -4,7 +4,7 @@
             <h1 class="section-heading">Liên Hệ Với Shop</h1>
             <div class="row contact-content">
                 <div class="col col-half contact-form">
-                    <form action="process_order.php" method="POST">
+                    <form action="#successModal" method="POST">
                         <h3>Liên hệ In Ấn</h3>
                         <div class="row">
                             <div class="col col-full">
@@ -34,11 +34,11 @@
                                     class="form-control">
                             </div>
                         </div>
-                        <input class="btn pull-right form-submit-btn mt-16" type="submit" value="Gửi Yêu Cầu">
+                        <input class="pull-right form-submit-btn mt-16" type="submit" value="Gửi Yêu Cầu">
                     </form>
                 </div>
                 <div class="col col-half contact-form">
-                    <form action="process_design.php" method="POST">
+                    <form action="#successModal" method="POST">
                         <h3>Liên hệ thiết kế</h3>
                         <div class="row">
                             <div class="col col-full">
@@ -64,10 +64,19 @@
                                     class="form-control">
                             </div>
                         </div>
-                        <input class="btn pull-right form-submit-btn mt-16" type="submit" value="Gửi Yêu Cầu">
+                        <input class="pull-right form-submit-btn mt-16" type="submit" value="Gửi Yêu Cầu">
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="successModal" class="modal" onclick="closeModal()">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>Yêu cầu của bạn đã được gửi thành công!</h3>
+            <p>Cảm ơn bạn đã tin tưởng và ghé thăm shop của chúng tôi.</p>
+        </div>
+    </div>
+    <div id="overlay" class="overlay" onclick="closeModal()"></div>
 </body>

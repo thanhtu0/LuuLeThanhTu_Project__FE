@@ -1,24 +1,28 @@
-// hide loading
+//Ẩn phần loading và hiển thị trang bán hàng.
 setTimeout(function () {
     console.log('ok');
     document.getElementById("loading").style.display = "none";
     console.log('ok');
 }, 1000)
 
-//Search cái khách hàng yêu cầu và thay đổi ở mục menubar để khách hàng chọn khỏe hơn.
+//Tìm kiến khách hàng yêu cầu và thay đổi ở mục menubar để khách hàng chọn.
 
 function onSearch() {
     var input = document.querySelector('.search_input');
     var searchText = input.value.toLowerCase();
 
-    var items = document.querySelectorAll('#nav li a');
+    var items = document.querySelectorAll('#nav li');
 
     items.forEach(function (item) {
         var itemName = item.textContent.toLowerCase();
-        if (itemName.includes(searchText)) {
-            item.style.visibility = 'visible';
+        var subnav = item.querySelector('.subnav');
+
+        if (itemName.includes(searchText) || (subnav && Array.from(subnav.querySelectorAll('li')).some(function (subitem) {
+            return subitem.textContent.toLowerCase().includes(searchText);
+        }))) {
+            item.style.display = 'block';
         } else {
-            item.style.visibility = 'hidden';
+            item.style.display = 'none';
         }
     });
 }
@@ -36,6 +40,28 @@ function updateCartIcon() {
     var cartCountElement = document.getElementById('cartCount');
     cartCountElement.textContent = cartItems.length;
     cartCountElement.style.display = 'inline';
+
+    if (cartItems.length > 0) {
+        cartCountElement.classList.add('shake');
+        setTimeout(function () {
+            cartCountElement.classList.remove('shake');
+        }, 500); 
+    }
+}
+
+function updateCartForm() {
+    var cartItemsList = document.getElementById('cartItems');
+    var totalPriceElement = document.getElementById('totalPrice');
+    var total = calculateTotalPrice();
+
+    cartItemsList.innerHTML = '';
+    cartItems.forEach(function (item) {
+        var listItem = document.createElement('li');
+        listItem.textContent = item.name + ' - ' + item.price + ' đ';
+        cartItemsList.appendChild(listItem);
+    });
+
+    totalPriceElement.textContent = 'Tổng giá: ' + total + ' đ';
 }
 
 function calculateTotalPrice() {
@@ -46,24 +72,11 @@ function calculateTotalPrice() {
     return totalPrice;
 }
 
-function updateCartForm() {
-    var cartItemsList = document.getElementById('cartItems');
-    cartItemsList.innerHTML = '';
-
-    cartItems.forEach(function (item) {
-        var listItem = document.createElement('li');
-        listItem.textContent = item.name + ' - ' + item.price + ' đ';
-        cartItemsList.appendChild(listItem);
-    });
-
-    var totalPriceElement = document.getElementById('totalPrice');
-    totalPriceElement.textContent = 'Tổng giá: ' + calculateTotalPrice() + ' đ';
-}
-
 function showCart() {
     var cartForm = document.getElementById('cartForm');
     if (cartForm.style.display === 'none') {
         cartForm.style.display = 'block';
+        updateCartForm();
     } else {
         cartForm.style.display = 'none';
     }
@@ -72,9 +85,6 @@ function showCart() {
 function hideCart() {
     var cartForm = document.getElementById('cartForm');
     cartForm.style.display = 'none';
-
-    // var cartIcon = document.querySelector('.cart-icon');
-    // cartIcon.style.display = 'block';
 }
 
 function placeOrder() {
@@ -87,20 +97,10 @@ function placeOrder() {
     cartItems = [];
     updateCartIcon();
     updateCartForm();
+    openModal();
 }
 
-//Xác nhận thông tin trước khi gửi form 
-document.querySelectorAll('form').forEach(function (form) {
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); // Ngăn form gửi đi một cách tự động
-
-        var confirmed = confirm('Bạn có chắc chắn muốn gửi yêu cầu này?');
-        if (confirmed) {
-            openModal(); // Mở modal sau khi gửi yêu cầu thành công
-        }
-    });
-});
-
+//Hiển thị cảm ơn khách hàng.
 function openModal() {
     var modal = document.getElementById('successModal');
     var overlay = document.getElementById('overlay');
@@ -108,13 +108,30 @@ function openModal() {
     overlay.style.display = 'block';
 }
 
-
 function closeModal() {
     var modal = document.getElementById('successModal');
     var overlay = document.getElementById('overlay');
     modal.style.display = 'none';
     overlay.style.display = 'none';
 }
+
+addFormSubmidEvent();
+//Xác nhận thông tin trước khi gửi form 
+async function addFormSubmidEvent() {
+    await fetch('./components/contact-form.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('contact-form').innerHTML = data);
+    document.querySelectorAll('form').forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Ngăn form gửi đi một cách tự động
+            var confirmed = confirm('Bạn có chắc chắn muốn gửi yêu cầu này?');
+            if (confirmed) {
+                openModal(); // Mở modal sau khi gửi yêu cầu thành công
+            }
+        });
+    });
+}
+
 
 
 
