@@ -1040,6 +1040,7 @@ body {
 
 #cartForm button {
     background-color: #0EF6CC;
+    font-size: 24px;
     color: #F4FEFD;
     border: none;
     padding: 8px 16px;
@@ -1084,7 +1085,7 @@ body {
     font-size: 24px;
     font-weight: 700;
     cursor: pointer;
-    color: #3A4F50;
+    color: #F4FEFD;
     background-color: #0EF6CC;
     transition: color 0.3s ease; 
     width: 40px;
